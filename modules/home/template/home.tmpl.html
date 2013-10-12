@@ -1,0 +1,12 @@
+<article id="home" class="current">
+	<section>
+		<ul class='list'>
+			[[ for (var i = 0; i < data.length; i++) { ]]
+				[[ var item = data[i]; ]]
+				<li data-goto="[[= item.id ]]" class='nav'>
+					<h3>[[= item.text ]]</h3>
+				</li>
+			[[ } ]]
+		</ul>
+	</section>
+</article>
