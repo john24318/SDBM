@@ -2,9 +2,10 @@ define(['chui', 'modules/home/js/home'], function($, HomeView) {
 	'use strict';
 	var init = function(){
 		/* 
-		 * 1.create SDBM sqlite db if not exists
-		 * 2.load data folder to model
-		 * 3.render home view
+		 * 1.setup SDBM db
+		 * 2.load data to model, and then insert to db
+		 * 3.create folders in modules directory
+		 * 4.render home view
 		 */
 		 var homeObj = {
 			'menu': [

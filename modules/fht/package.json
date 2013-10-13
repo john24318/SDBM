@@ -1,0 +1,5 @@
+{
+	"module_name": "fht",
+	"version": "0.1.0",
+	"dependencies": ["admin","home"]
+}

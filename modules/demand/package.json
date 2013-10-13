@@ -1,0 +1,5 @@
+{
+	"module_name": "demand",
+	"version": "0.1.0",
+	"dependencies": ["admin","home"]
+}

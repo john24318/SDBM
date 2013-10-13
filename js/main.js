@@ -5,7 +5,7 @@ require.config({
 		jquery: 		'vendor/jquery/jquery-2.0.3',
 		text:			'vendor/require/text',
 		modules:		'../modules',
-		model:			'../model'
+		models:			'../models'
 	},
 	shim: {
 		'chui': ['chocolatechip']

@@ -1,0 +1,5 @@
+{
+	"module_name": "shortage",
+	"version": "0.1.0",
+	"dependencies": ["report"]
+}

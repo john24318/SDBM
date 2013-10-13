@@ -1,0 +1,37 @@
+[
+	{
+		"name": "master",
+		"nav_id": "master-article",
+		"displayname": "Master"
+	},
+	{
+		"name": "demand",
+		"nav_id": "demand-article",
+		"displayname": "Demand"
+	},
+	{
+		"name": "supply",
+		"nav_id": "supply-article",
+		"displayname": "Supply"
+	},
+	{
+		"name": "wo",
+		"nav_id": "wo-article",
+		"displayname": "WO"
+	},
+	{
+		"name": "report",
+		"nav_id": "report-article",
+		"displayname": "Report"
+	},
+	{
+		"name": "fht",
+		"nav_id": "fht-article",
+		"displayname": "FHT"
+	},
+	{
+		"name": "admin",
+		"nav_id": "admin-article",
+		"displayname": "Administrator"
+	}
+]
