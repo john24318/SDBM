@@ -1,0 +1,16 @@
+<nav>
+	<a class="button back">SDB Mobile</a>
+	<h1>Administrator</h1>
+</nav>
+<article id="admin-article" class="next">
+	<section>
+		<ul class='list'>
+			[[ for (var i = 0; i < data.length; i++) { ]]
+				[[ var item = data[i]; ]]
+				<li data-goto="[[= item.nav_id ]]" class='nav'>
+					<h3>[[= item.displayname ]]</h3>
+				</li>
+			[[ } ]]
+		</ul>
+	</section>
+</article>
