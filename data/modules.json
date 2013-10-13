@@ -2,7 +2,7 @@
 	{
 		"name": "admin",
 		"nav_id": "admin-article",
-		"displayname": "Administrator",
+		"displayname": "Administrator"
 	},
 	{
 		"name": "master",

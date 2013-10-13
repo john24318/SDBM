@@ -5,8 +5,8 @@ define(['chocolatechip', 'models/user/user_moduleModel'], function($, User_Modul
 		//fetch json file
 		self.fetch = function(json_file){
 			$.getJSON(json_file, function(data){
-				data.forEach(item){
-					item = new User_Module({'user_id': item.user_id, 'module_id': item.module_id, 'enable': item.enable});
+				data.forEach(function(model){
+					var item = new User_Module({'user_id': model.user_id, 'module_id': model.module_id, 'enable': model.enable});
 					self.push(item);
 				}
 			});

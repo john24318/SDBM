@@ -4,6 +4,9 @@ define(['chocolatechip', 'text!modules/home/template/home.tmpl.html'], function(
 	var HomeView = {
 		template: function(data){
 			return $.template(home)(data);
+		},
+		preload: function(data){
+			
 		}
 	}
 	

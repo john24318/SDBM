@@ -5,19 +5,19 @@ define(['chocolatechip', 'models/module/moduleModel'], function($, Module){
 		//fetch json file
 		self.fetch = function(json_file){
 			$.getJSON(json_file, function(data){
-				data.forEach(item){
-					item = new Module({'name': item.name, 'nav_id': iten.nav_id, 'displayname': item.displayname});
+				data.forEach(function(model){
+					var item = new Module({'name': model.name, 'nav_id': model.nav_id, 'displayname': model.displayname});
 					
 					//load modules package.json to get dependencies
 					var tmpPackageUrl = '/modules/' + item.name + '/package.json';
-					$.getJSON(tmpPackageUrl, function(module_data){
-						if(module_data[0][module_name] === item.name){
-							item.dependencies = module_data[0][dependencies];
+					$.getJSON(tmpPackageUrl, function(module_json){
+						if(item.name === module_json.module_name){
+							item.dependencies = module_json.dependencies;
 						}
 					});
 
 					self.push(item);
-				}
+				});
 			});
 		}
 

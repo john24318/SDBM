@@ -1,6 +1,6 @@
 define(function(){
 	var User_Module = function(attrs) {
-		var default = {
+		var defaults = {
 			'id': 0,
 			'user_id': '',
 			'module_id': '',
@@ -9,13 +9,13 @@ define(function(){
 
 		if(typeof attrs === 'object'){
 			Object.keys(attrs).forEach(function(name){
-				if (default.hasownproperty(name)) {
-					default[name] = attrs[name];
+				if (defaults.hasOwnProperty(name)) {
+					defaults[name] = attrs[name];
 				}
 			});
 		}
 
-		return default;
+		return defaults;
 	}
 
 	return User_Module;

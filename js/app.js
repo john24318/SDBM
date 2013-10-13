@@ -1,4 +1,4 @@
-define(['chui', 'modules/login/js/login', 'modules/home/js/home'], function($, LoginView, HomeView) {
+define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module/moduleCollection'], function($, LoginView, HomeView, Modules) {
 	'use strict';
 	var init = function(){
 		/* 
@@ -24,46 +24,12 @@ define(['chui', 'modules/login/js/login', 'modules/home/js/home'], function($, L
 		 *       a.display login screen
 		 * 3.render home view
 		 */
-		 var homeObj = {
-			'menu': [
-			{
-				'id': 'master-article',
-				'text': 'Master',
-				'class': ''
-			},
-			{
-				'id': 'demand-article',
-				'text': 'Demand',
-				'class': ''
-			},
-			{
-				'id': 'supply-article',
-				'text': 'Supply',
-				'class': ''
-			},
-			{
-				'id': 'wo-article',
-				'text': 'WO',
-				'class': ''
-			},
-			{
-				'id': 'report-article',
-				'text': 'Report',
-				'class': ''
-			},
-			{
-				'id': 'fht-article',
-				'text': 'FHT',
-				'class': ''
-			},
-			{
-				'id': 'admin-article',
-				'text': 'Administrator',
-				'class': ''
-			}
-			]}
-		$('body').append(LoginView.template());
-		//$('body').append(HomeView.template(homeObj.menu));
+		 
+		var modules = new Modules();
+		modules.fetch('/data/modules.json');
+		//$('body').append(LoginView.template());
+		$('body').append(HomeView.template(modules));
+		//$('body').append(HomeView.preload(modules));
 	};
 
 	return {

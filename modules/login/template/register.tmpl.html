@@ -3,6 +3,33 @@
 </nav>
 <article id="home" class="current">
 	<section>
-		hello!
+		<h2>Hello! Add details to your account</h2>
+		<ul class="list" ui-implements="form">
+			<li>
+				<input autocorrect="off" autocapitalize="off" type="email" id="email" placeholder="Email Address" required>
+			</li>
+			<li>
+				<input autocorrect="off" autocapitalize="off" type="email" id="email_confirm" placeholder="Re-enter Email Address" required>
+			</li>
+			<li>
+				<input autocorrect="off" autocapitalize="off" type="password" id="password" placeholder="Password" required>
+			</li>
+		</ul>
+
+		<ul class="list" ui-implements="form">
+			<li>
+				<p>"Here are all the legal requirements that would put a normal person to sleep but which we expect you to have to suffer through reading if you want to proceed.</p>
+			</li>
+			<li id="agreeToTermsCell" class="comp">
+				<div>
+					<label id="agreeToTermsLabel" for="agreeToTerms">I agree to these terms.</label>
+				</div>
+				<aside>
+					<span class="switch" id="agreeToTerms" role="checkbox"><em></em><input type="checkbox"></span>
+				</aside>
+			</li>
+		</ul>
+
+		<a class="button action" id="submitRegistration">Join</a>
 	</section>
 </article>
