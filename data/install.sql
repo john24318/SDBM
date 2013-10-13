@@ -18,7 +18,7 @@ create table users(id integer primary key autoincrement, username text not null,
 ;
 create table modules(id integer primary key autoincrement, name text not null, nav_id text not null, displayname text, version text, author text, dependencies text)
 ;
-create table user_modules(id integer primary key autoincrement, user_id integer not null, module_id integer not null, status integer not null)
+create table user_modules(id integer primary key autoincrement, user_id integer not null, module_id integer not null, enable integer not null)
 ;
 create table types(id integer primary key, type text not null)
 ;
