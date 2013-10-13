@@ -4,7 +4,10 @@ define(function(){
 			'id': 0,
 			'name': '',
 			'nav_id': '',
-			'displayname', ''
+			'displayname': '',
+			'version': 0.0,
+			'author': '',
+			'release_date': '',
 			'dependencies': []
 		}
 

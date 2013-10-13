@@ -1,5 +1,6 @@
 {
 	"module_name": "demand",
 	"version": "0.1.0",
+	"author": "gladmin",
 	"dependencies": ["admin","home"]
 }

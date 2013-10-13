@@ -2,10 +2,27 @@ define(['chui', 'modules/home/js/home'], function($, HomeView) {
 	'use strict';
 	var init = function(){
 		/* 
-		 * 1.setup SDBM db
-		 * 2.load data to model, and then insert to db
-		 * 3.create folders in modules directory
-		 * 4.render home view
+		 * 1.check app.config installed, if is false:
+		 *     a.setup SDBM db
+		 *     b.fetch data to model, and then insert to db;
+		 *   if is true:
+		 *     a.load data from db
+		 * 2.check modules table from db, if has new module:
+		 *     a.update modules tables by its package.json
+		 *     b.update app.config
+		 * 3.check users table from db, if users is empty:
+		 *     a.display create user screen
+		 *   if has user:
+		 *     check if any user is enable, if true:
+		 *       check app_status table, if is empty:
+		 *         a.display login screen
+		 *       if last_user_id and auto_login are true:
+		 *         a.goto step 3
+		 *       else
+		 *         a.display login screen
+		 *     if false:
+		 *       a.display login screen
+		 * 3.render home view
 		 */
 		 var homeObj = {
 			'menu': [

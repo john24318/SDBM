@@ -1,5 +1,10 @@
 [
 	{
+		"name": "admin",
+		"nav_id": "admin-article",
+		"displayname": "Administrator",
+	},
+	{
 		"name": "master",
 		"nav_id": "master-article",
 		"displayname": "Master"
@@ -28,10 +33,5 @@
 		"name": "fht",
 		"nav_id": "fht-article",
 		"displayname": "FHT"
-	},
-	{
-		"name": "admin",
-		"nav_id": "admin-article",
-		"displayname": "Administrator"
 	}
 ]
