@@ -1,4 +1,4 @@
-define(['chui', 'modules/home/js/home'], function($, HomeView) {
+define(['chui', 'modules/login/js/login', 'modules/home/js/home'], function($, LoginView, HomeView) {
 	'use strict';
 	var init = function(){
 		/* 
@@ -62,8 +62,8 @@ define(['chui', 'modules/home/js/home'], function($, HomeView) {
 				'class': ''
 			}
 			]}
-
-		$('body').append(HomeView.template(homeObj.menu));
+		$('body').append(LoginView.template());
+		//$('body').append(HomeView.template(homeObj.menu));
 	};
 
 	return {
