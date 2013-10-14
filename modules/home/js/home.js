@@ -16,9 +16,11 @@ define(['chocolatechip', 'text!modules/home/template/index.tmpl.html'], function
 				var template_url = 'modules/' + module_name + '/template/index.tmpl.html';
 				// var reader = new FileReader();
 				// reader.readAsText(template_url);
-				require(['text!' + template_url], function(module){
+				require(['chui', 'text!' + template_url], function($, module){
 					var module_template = $.template(module)(item);
 					$('body').append(module_template);
+					//must re-bind body when loaded template
+					$.applyBindings();
 				});
 				
 			});

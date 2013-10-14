@@ -29,9 +29,11 @@ define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module
 		modules.fetch('/data/modules.json');
 		//$('body').append(LoginView.template());
 		$('body').append(HomeView.template(modules));
+		//must re-bind body when loaded template
+		$.applyBindings();
+		
 		HomeView.preload(modules);
 		//$('body').append(HomeView.preload(modules));
-		$('body').ready();//no use, must re-bind body to ChocolateChip.js
 	};
 
 	return {
