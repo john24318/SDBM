@@ -1,7 +1,7 @@
-define(['chocolatechip', 'text!modules/home/template/index.tmpl.html'], function($, home){
+define(['chui', 'text!modules/home/template/index.tmpl.html'], function($, home){
 	'use strict';
 	
-	var HomeView = {
+	var HomeView = $.View.extend({
 		//render template html
 		template: function(data){
 			return $.template(home)(data);
@@ -27,7 +27,7 @@ define(['chocolatechip', 'text!modules/home/template/index.tmpl.html'], function
 
 			return html;
 		}
-	}
+	});
 	
 	return HomeView;
 });

@@ -27,12 +27,13 @@ define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module
 		 
 		var modules = new Modules();
 		modules.fetch('/data/modules.json');
-		//$('body').append(LoginView.template());
-		$('body').append(HomeView.template(modules));
+		//var view = new LoginView();
+		var view = new HomeView();
+		$('body').append(view.template(modules));
 		//must re-bind body when loaded template
 		$.applyBindings();
 		
-		HomeView.preload(modules);
+		//HomeView.preload(modules);
 		//$('body').append(HomeView.preload(modules));
 	};
 

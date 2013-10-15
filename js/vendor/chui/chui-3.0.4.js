@@ -1629,4 +1629,42 @@ var whichJavaScriptLibrary = window.$chocolatechip || window.jQuery;
          return whichJavaScriptLibrary;
       } );
    }
+
+   // This is added by John for require.js use
+   var myExtend = function (protoProps) {
+      var self = function(options){
+         var that = this;
+         if(typeof options === 'object'){
+            Object.keys(options).forEach(function(name){
+               if (protoProps.hasOwnProperty(name)) {
+                  that[name] = options[name];
+               }
+            });
+         }
+      }
+
+      if(typeof protoProps === 'object'){
+         Object.keys(protoProps).forEach(function(name){
+            if (protoProps.hasOwnProperty(name)) {
+               self.prototype[name] = protoProps[name];
+            }
+         });
+      }
+      return self;
+   };
+
+   // Set up inheritance for the model, collection, and view.
+   $.extend($, {
+      Collection: function(props){
+      },
+      Model: function(props){
+      },
+      View: function(props){
+      }
+   });
+   $.Collection.extend = $.Model.extend = $.View.extend = myExtend;
+
+   // Set up $.Collection as an Array
+   $.Collection.prototype = Array();
+
 })(whichJavaScriptLibrary);
