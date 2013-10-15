@@ -1,4 +1,4 @@
-define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module/moduleCollection'], function($, LoginView, HomeView, Modules) {
+define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module/moduleCollection'], function($, LoginView, HomeView, ModuleCollection) {
 	'use strict';
 	var init = function(){
 		/* 
@@ -25,7 +25,7 @@ define(['chui', 'modules/login/js/login', 'modules/home/js/home', 'models/module
 		 * 3.render home view
 		 */
 		 
-		var modules = new Modules();
+		var modules = new ModuleCollection();
 		modules.fetch('/data/modules.json');
 		//var view = new LoginView();
 		var view = new HomeView();
