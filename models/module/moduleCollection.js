@@ -1,11 +1,11 @@
 define(['chui', 'models/module/moduleModel'], function($, Module){
 	'use strict';
 
-	var Modules = function(){
-		var self = new Array();
-
+	var Modules = $.Collection.extend({
 		//fetch json file
-		self.fetch = function(json_file){
+		fetch: function(json_file){
+			var array = new Array();
+
 			$.getJSON(json_file, function(data){
 				if (data instanceof Array) {
 					data.forEach(function(obj){
@@ -19,14 +19,15 @@ define(['chui', 'models/module/moduleModel'], function($, Module){
 							}
 						});
 
-						self.push(item);
+						array.push(item);
 					});
 				}
 			});
+			
+			return array;
 		}
 
-		return self;
-	}
+	});
 
 	return Modules;
 });

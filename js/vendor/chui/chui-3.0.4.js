@@ -1630,40 +1630,19 @@ var whichJavaScriptLibrary = window.$chocolatechip || window.jQuery;
       } );
    }
 
-   
-   // Set up inheritance for the model, collection, and view.
+   //This is added by John for chui.js MV* use
+   //Set up inheritance for the model, collection, and view.
    $.extend($, {
-      Collection: function(models, options){
-         options || (options = {});
-      },
-
       Model: function(attributes, options){
-
       },
 
+      Collection: function(models, options){
+      },
+      
       View: function(options){
       }
    });
-
-   $.extend($.Collection.prototype, Array(), {
-      set: function(models, options) {
-
-      },
-
-      push: function(models, options) {
-         return push.apply(this.models, arguments);
-      },
-
-      splice: function() {
-         return splice.apply(this.models, arguments);
-      },
-      
-      fetch: function(options) {
-
-      }
-   });
-
-   // This is added by John for require.js use
+   
    var myExtend = function (protoProps) {
       var self = function(options){
          var that = this;

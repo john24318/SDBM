@@ -7,25 +7,25 @@ define(['chui', 'text!modules/home/template/index.tmpl.html'], function($, home)
 			return $.template(home)(data);
 		},
 
-		//render data-goto template html
-		preload: function(data){
-			var html = '';
-
-			data.forEach(function(item){
-				var module_name = item.nav_id.substring(0, item.nav_id.indexOf('-article'));
-				var template_url = 'modules/' + module_name + '/template/index.tmpl.html';
-				// var reader = new FileReader();
-				// reader.readAsText(template_url);
-				require(['chui', 'text!' + template_url], function($, module){
-					var module_template = $.template(module)(item);
-					$('body').append(module_template);
-					//must re-bind body when loaded template
-					$.applyBindings();
-				});
-				
+		preload_handler: function(){
+			$('li[data-goto]').each(function(item){
+				var nav_id = $(item).attr('data-goto');
+				if( nav_id.indexOf('-article') !== -1 ){
+					var module_name = nav_id.substring(0, nav_id.indexOf('-article'));
+					var template_url = 'modules/' + module_name + '/template/index.tmpl.html';
+					
+					$(item).on('click', function(){
+						if ( $('#'+nav_id).length === 0 ) {
+							require(['chui', 'text!' + template_url], function($, module){
+								var module_template = $.template(module)(item);
+								$('body').append(module_template);
+								//must re-bind body when loaded template
+								$.applyBindings();
+							});
+						}	
+					});
+				}
 			});
-
-			return html;
 		}
 	});
 	
